@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel;
+using System.Reflection;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,55 +9,58 @@ namespace ex2
 {
     class Program
     {
+        public enum Month
+        {
+            [Description("Январь")]
+            January = 1,
+            [Description("Февраль")]
+            February,
+            [Description("Март")]
+            March,
+            [Description("Апрель")]
+            April,
+            [Description("Май")]
+            May,
+            [Description("Июнь")]
+            June,
+            [Description("Июль")]
+            July,
+            [Description("Август")]
+            August,
+            [Description("Сентябрь")]
+            September,
+            [Description("Октябрь")]
+            October,
+            [Description("Ноябрь")]
+            November,
+            [Description("Декабрь")]
+            December
+        }
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите порядковый номер текущего месяца");
-            int monthNumber = Convert.ToInt32(Console.ReadLine());
-            string monthName;
 
-            switch (monthNumber)
+            //TODO написать метод получения значения из description
+
+            do
             {
-                case 1:
-                    monthName = "Январь";
+                
+                Console.Write("Введите порядковый номер текущего месяца:");
+
+                int monthNumber = Convert.ToInt32(Console.ReadLine());
+
+                if (monthNumber > 12 || monthNumber < 1)
+                {
+                    Console.WriteLine("Вы ошиблись, такого месяца не существует. Попробуйте еще раз!");
+                }
+                else
+                {
+                    Month monthName = (Month)(monthNumber);
+                    Console.WriteLine($"Сейчас на дворе {monthName}");
                     break;
-                case 2:
-                    monthName = "Февраль";
-                    break;
-                case 3:
-                    monthName = "Март";
-                    break;
-                case 4:
-                    monthName = "Апрель";
-                    break;
-                case 5:
-                    monthName = "Май";
-                    break;
-                case 6:
-                    monthName = "Июнь";
-                    break;
-                case 7:
-                    monthName = "Июль";
-                    break; 
-                case 8:
-                    monthName = "Август";
-                    break;   
-                case 9:
-                    monthName = "Сентябрь";
-                    break;                
-                case 10:
-                    monthName = "Октябрь";
-                    break;                
-                case 11:
-                    monthName = "Ноябрь";
-                    break;                
-                case 12:
-                    monthName = "Декабрь";
-                    break;
-                default:
-                    monthName = "Вести можно только числа от 1 до 12!";
-                    break;
-            }
-            Console.WriteLine($"{monthName}");
+                }
+
+                Console.WriteLine("Для выхода нажмите Esc");
+            } while (Console.ReadKey().Key != ConsoleKey.Escape);
         }
     }
 }
