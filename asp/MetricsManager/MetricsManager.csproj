@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="MetricsManager\bin\Debug\net5.0\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="MetricsManager\bin\Debug\net5.0\appsettings.json" />
+      <_ContentIncludedByDefault Remove="MetricsManager\bin\Debug\net5.0\MetricsManager.deps.json" />
+      <_ContentIncludedByDefault Remove="MetricsManager\bin\Debug\net5.0\MetricsManager.runtimeconfig.dev.json" />
+      <_ContentIncludedByDefault Remove="MetricsManager\bin\Debug\net5.0\MetricsManager.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="MetricsManager\obj\MetricsManager.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="MetricsManager\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="MetricsManager\obj\project.packagespec.json" />
+    </ItemGroup>
+
+</Project>
